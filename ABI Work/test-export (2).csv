@@ -1,0 +1,2 @@
+Name,Time,Details,Status,"Time Status"
+dorado_silicon_daily_func_ubuntu_inference_whole_network_7442_py_test_inference_whole_network_fp16mix_final_avg3_resc_new_shape_fp32inout_1x124x256x4x40x4_bs_1,57.93,"Completed (ILLEGAL)",Failed,Passed

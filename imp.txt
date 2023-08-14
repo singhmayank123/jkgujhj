@@ -1,0 +1,85 @@
+ip - 10.9.114.31
+server1
+dorado - 10.9.115.16
+username - root
+pass - Enflame@123456
+server2
+dorado - 10.12.111.158
+pass - 123456@Enflame
+putty
+username - niraj
+pass - 123456@Enflame
+to go in fdocker - efdocker enter gcc7 (test cases) gcc5(when we change anything on tops)
+sudo su - for root permissions 
+Command for tops clone - git clone "ssh://apurva@gerrit.enflame.cn:29418/tops" && (cd "tops" && curl -sL http://build.enflame.cn/.init.sh | bash) 
+
+
+How to run a test case? 
+
+1) start easy connect
+2) open putty on server 1 or server2 
+3) login as : root and enter password of server 1 or 2
+4) create your workspace
+5) go to your workspace and create a folder of x86_date
+6) go to x86 folder and use scp command to transfer files
+7) scp -r niraj@10.9.114.31:/home/niraj/MS_workspace/1407/cmake_build/x86_64-linux-rel . 
+8) password (server from which we are copying the files) / generally, we don't copy,
+ we use mount. mount server from which we want to copy. below is the commad:
+
+mount source_path des_path
+9) cd x86 wale folder
+10) vim CTestmake.make file open kro and copy a test case and run
+./setup_platform.sh i20_silicon_x86_ubuntu kmd_install
+inplace op
+
+brave_dubinsky
+sabse pehle hum builder server hote hai, new session create krne pr
+fir ssh command ka use krke test server pr aao (ssh -p 22 (server kitne bhi ho skte hai pr yha 2  hai mathew and root) matthew.he@10.12.114.242
+uske baad, x86 vwale me jao aur kmd wali command clahalo using ctrl R
+ab dcoker me jaana hai 
+
+2) now enter into the docker using the commands 
+ sudo docker exec -ti brave_dubinsky bash
+
+
+3) now, x86 path ke andar jao aur package install krodd
+sudo ./setup_platform.sh t20_silicon_x86_ubuntu package_install 3.6
+
+/matthew.he/Aditya/PD_Workspace/1707_build/x86_64-linux-rel/
+
+4) cd tops/backend/torch_dtu/test/framework/
+5) cd hlir_bridge/
+6) iske andar apni python ki python banao aur code likho 
+
+below is the given sample code
+
+import os
+os.environ["ENFLAME_ENABLE_PT_DYNAMIC_SHAPE"] = "true"
+import unittest
+import torch_gcu
+import torch
+import torch.nn.functional as F
+
+dev = torch_gcu.gcu_device(0)
+class HlirBridgeOpsTest(unittest.TestCase):
+test_index_copy
+if __name__ == '__main__':
+    unittest.main()
+
+
+vim commands:
+ctrl G - current opne file name
+ESC and U for undo teh oeprations
+CTRL R - to redo 
+
+
+Ways to create a new docker - 
+
+1) ctrl + r and type sudo docker run 
+2) sudo docker start docker_name
+
+sudo docker ps -a (to check the name of your docker)
+3) sudo docker exec -ti docker_name bash (to enter into your docker)
+
+PCadmin-01
+epic_matsumoto

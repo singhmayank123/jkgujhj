@@ -1,0 +1,2 @@
+Name,Time,Details,Status,"Time Status"
+dorado_silicon_daily_perf_ubuntu_model_4238_py_test_inference_whole_network_fp16_bert_base_squad_google_op13_fp32_seqn_384_bs1_perf_modelrunner,77.14,"Completed (Failed)",Failed,Passed
